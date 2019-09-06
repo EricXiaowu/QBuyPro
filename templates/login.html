@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h3>用户登录页面</h3>
+    <form method="post">
+        {% csrf_token %}
+        <input name="name" placeholder="账号">
+        <br><br>
+        <input name="password" type="password" placeholder="口令"><br><br>
+
+        <button class="btn btn-primary">登录</button>
+
+    </form>
+    <p></p>
+    <p style="color:red;">
+        {{ error_msg }}
+    </p>
+{% endblock %}
